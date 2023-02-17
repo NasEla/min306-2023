@@ -49,4 +49,4 @@ After accepting one candidate, the game ends. It says who you chose and who was 
 
 ![Game finished, you may play again](./img/game_end.png)
 
-The game was done using the classical HTML, CSS, and JS. But it also used the new framework [Svelte](https://svelte.dev/). It has a great developer experience, with the cost of having a small ecosystem since it is a new framework. Since we don't plan to hire other people to do this project, we chose to use this framework. It also used [skeleton](https://www.skeleton.dev/) which is a component library to Svelte, similar to [material ui](https://mui.com/) for [React](https://reactjs.org/).
+The game was done using the classical HTML, CSS, and JS. But it also used the new framework [Svelte](https://svelte.dev/). It has a great developer experience, with the cost of having a small ecosystem since it is a new framework. Since we don't plan to hire other people to do this project, we chose to use this framework. We also used [Skeleton](https://www.skeleton.dev/) which is a component library to Svelte, similar to [material ui](https://mui.com/) for [React](https://reactjs.org/), and [Tailwind](https://tailwindcss.com/).
