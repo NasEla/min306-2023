@@ -1,0 +1,3 @@
+[submodule "secretary/the-secretary-problem"]
+	path = secretary/the-secretary-problem
+	url = https://github.com/Daquisu/the-secretary-problem
