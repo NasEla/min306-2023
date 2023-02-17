@@ -1,6 +1,6 @@
 ---
 title: "The Secretary Problem"
-authors: Vinicius Akira Imaizumi
+authors: [Vinicius Akira Imaizumi, Pedro Germano Almeida Machado]
 ---
 # Introduction
 Imagine you have a company, and you want to hire someone for a secretary job.
