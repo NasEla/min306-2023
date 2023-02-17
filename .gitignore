@@ -4,6 +4,6 @@
 /.quarto/
 _site
 *.html
-
+.ipynb_checkpoints
 # coucou je suis un commentaire
 # bien joué si tu m'as trouvé.
