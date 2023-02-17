@@ -1,3 +1,7 @@
+---
+title: "The Secretary Problem"
+authors: Vinicius Akira Imaizumi, 
+---
 # Introduction
 Imagine you have a company, and you want to hire someone for a secretary job.
 You start announcing the open position on LinkedIn, to your friends, to your family, and even on Instagram.
@@ -44,3 +48,5 @@ By clicking on reject, the next candidate appears. This keep happening while you
 After accepting one candidate, the game ends. It says who you chose and who was the best candidate. Then, you may play again.
 
 ![Game finished, you may play again](./img/game_end.png)
+
+The game was done using the classical HTML, CSS, and JS. But it also used the new framwork (Svelte)[https://svelte.dev/]. It has a great developer experience, with the cost of having a small ecosystem since it is a new framework. Since we don't plan to hire other people to do this project, we chose to use this framwork. It also used [skeleton](https://www.skeleton.dev/) which is a component library to Svelte, similar to (material ui)[https://mui.com/] for (React0[https://reactjs.org/].
