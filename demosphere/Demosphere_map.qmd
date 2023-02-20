@@ -1,0 +1,115 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.13.8
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+#| id: LJWMMV19_acR
+#| colab: {base_uri: 'https://localhost:8080/'}
+#| id: LJWMMV19_acR
+#| outputId: 82d8d6ec-04b3-48b6-d31c-111ca24cf285
+
+# import pandas module 
+import pandas as pd 
+    
+# making dataframe 
+df = pd.read_csv("evenements (1).csv") 
+   
+# output the dataframe
+print(df)
+```
+
+# Visualistaion demosphere
+
+```{python}
+#| id: pRjRwMQ8ATdF
+#| id: pRjRwMQ8ATdF
+df.location=df.location.astype('string')
+```
+
+```{python}
+#| id: khbRlnVMAWY0
+#| id: khbRlnVMAWY0
+def get_location(s):
+  c = 'latitude'
+  la=s.rfind(c)
+  d = 'longitude'
+  lo=s.rfind(d)
+  if (s[la+11:la+18])!="'Place'":
+    return((s[la+11:la+18]),s[lo+12:lo+19])
+```
+
+```{python}
+#| id: 0B6H62czAac9
+#| colab: {base_uri: 'https://localhost:8080/'}
+#| id: 0B6H62czAac9
+#| outputId: 188c027b-5cbd-43d9-ddaf-e4e3665de7f3
+C=[]
+for i in df.index:
+  C.append(get_location(df.location[i]))
+
+#print(C)
+```
+
+```{python}
+#| id: JIgQSsQxDnDU
+#| id: JIgQSsQxDnDU
+C2=[point for point in C if point!= None]
+```
+
+```{python}
+pip install folium
+```
+
+```{python}
+#| id: CrVVG3ZVAlGB
+#| colab: {base_uri: 'https://localhost:8080/', height: 555}
+#| id: CrVVG3ZVAlGB
+#| outputId: 768d244d-5954-4056-ee4d-fe4e51fbd317
+# import the library
+import folium
+
+# Make an empty map
+m = folium.Map(location=[20,0], tiles="OpenStreetMap", zoom_start=2)
+
+# Show the map
+m
+```
+
+```{python}
+#| id: wmWo1UyLAwcY
+#| id: wmWo1UyLAwcY
+# add marker one by one on the map
+for point in C2:
+   folium.Marker(
+      point
+      
+   ).add_to(m)
+
+# Show the map again
+```
+
+```{python}
+#| id: e4mDFy0nCCIQ
+#| colab: {base_uri: 'https://localhost:8080/', height: 555}
+#| id: e4mDFy0nCCIQ
+#| outputId: ccbcea49-5133-43fc-b2c2-cbb5edc6a5f7
+m
+```
+
+```{python}
+#| id: EGGsWmsmFKEi
+#| colab: {base_uri: 'https://localhost:8080/'}
+#| id: EGGsWmsmFKEi
+#| outputId: 0bdb307d-50b8-4ff6-950c-3391883692f5
+df.name
+```
