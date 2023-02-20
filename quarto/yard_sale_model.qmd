@@ -1,0 +1,59 @@
+---
+title: "YARD SALE MODEL"
+author: "Jorick Defraine"
+format:
+  html:
+    code-fold: true
+bibliography: references.bib
+jupyter: python3
+toc: true
+number-sections: true
+---
+## YARD SALE MODEL
+
+```{python}
+#| fig-cap: "A bar plot about the yard sale game"
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def random_pairs(lst):
+    """
+    Takes a list with an even number of elements and returns a list of random paired elements of the list.
+    """
+    random.shuffle(lst)  # Shuffle the list in place
+    pairs = []
+    for i in range(0, len(lst), 2):
+        pairs.append([lst[i], lst[i+1]])
+    return pairs
+
+# Computations take around 30 seconds.
+n = 1000
+rounds = 100000
+starting_balance = 1000
+wager = 0.2
+wallets = n*[starting_balance]
+
+new_wallets = []
+
+for r in range(rounds):
+    pairs = random_pairs(wallets)
+    for p in pairs:
+        w1 = p[0]+p[1]*wager
+        w2 = p[1]*(1-wager)
+        new_wallets.extend([w1,w2])
+    wallets = new_wallets
+    new_wallets = []
+
+wallets = np.sort([round(w/100)*100 for w in wallets])
+
+ax = sns.histplot(wallets)
+ax.set(xlabel='Wealth', ylabel='Count', title="Wealth Distribution n={} rounds={}".format(n, rounds))
+plt.show()
+print("Richest wallet: ${}".format(max(wallets)))
+print("Poorest wallet: ${}".format(min(wallets)))
+```
+
+## References
+https://pudding.cool/2022/12/yard-sale/
