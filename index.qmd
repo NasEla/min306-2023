@@ -1,0 +1,7 @@
+---
+listing:
+  contents:
+    - "**/*.qmd"
+---
+
+# projets du cours MIN 306 - 2023
